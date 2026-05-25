@@ -1095,13 +1095,36 @@ body.menu-open .menu-btn { color: #f4ecd8; }
 @media (max-width: 720px) {
   /* ----- compact mobile header: hamburger + small wordmark + boka icon ----- */
   .site-header { padding: 8px 0 0; }
-  .header-top { padding: 0 16px; gap: 12px; }
+  .header-top { padding: 0 12px; gap: 12px; }
   .menu-btn span:not(.lines) { display: none; }
-  .menu-btn { padding: 10px; }
-  .menu-btn .lines { width: 24px; gap: 5px; }
-  .menu-btn .lines span { height: 1.5px; }
+  .menu-btn {
+    padding: 11px 13px;
+    background: rgba(20, 35, 58, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(244, 236, 216, 0.25);
+    border-radius: 999px;
+  }
+  .menu-btn .lines { width: 22px; gap: 5px; }
+  .menu-btn .lines span {
+    height: 2px;
+    background: #f4ecd8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
   .menu-btn .lines span:nth-child(2) { width: 100%; }
   .menu-btn .lines span:nth-child(3) { width: 100%; }
+  .boka-btn {
+    background: rgba(20, 35, 58, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(244, 236, 216, 0.25);
+    border-radius: 999px;
+  }
+  .site-header.scrolled .menu-btn,
+  .site-header.scrolled .boka-btn {
+    background: transparent;
+    border-color: transparent;
+  }
   .wordmark .crest,
   .wordmark .sub,
   .wordmark .rule { display: none; }
