@@ -1,0 +1,4 @@
+server.cjs
+.peek*
+.DS_Store
+Thumbs.db
