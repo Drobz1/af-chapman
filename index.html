@@ -1073,16 +1073,14 @@ body.menu-open .menu-btn { color: #f4ecd8; }
   .nav-rail a { font-size: 0.68rem; letter-spacing: 0.22em; }
 }
 
+.hero-mobile-cta { display: none; }
+
 @media (max-width: 960px) {
   .header-top { grid-template-columns: 1fr auto 1fr; }
   .wordmark .tagline { display: none; }
   .nav-rail { display: none; }
   .hero { min-height: 640px; }
   .hero-caption { padding-bottom: 220px; }
-  .booking { grid-template-columns: 1fr 1fr; }
-  .booking-field { border-bottom: 1px solid rgba(184, 147, 82, 0.25); }
-  .booking-field:nth-child(2) { border-right: none; }
-  .booking-cta { grid-column: 1 / -1; padding: 16px; }
 
   .split-grid { grid-template-columns: 1fr; gap: 48px; }
   .menu-list { grid-template-columns: 1fr; gap: 0; }
@@ -1094,14 +1092,62 @@ body.menu-open .menu-btn { color: #f4ecd8; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 720px) {
+  /* ----- compact mobile header: hamburger + small wordmark + boka icon ----- */
+  .site-header { padding: 8px 0 0; }
+  .header-top { padding: 0 16px; gap: 12px; }
   .menu-btn span:not(.lines) { display: none; }
+  .menu-btn { padding: 10px; }
+  .menu-btn .lines { width: 24px; gap: 5px; }
+  .menu-btn .lines span { height: 1.5px; }
+  .menu-btn .lines span:nth-child(2) { width: 100%; }
+  .menu-btn .lines span:nth-child(3) { width: 100%; }
+  .wordmark .crest,
+  .wordmark .sub,
+  .wordmark .rule { display: none; }
+  .wordmark .name {
+    font-size: 0.95rem;
+    letter-spacing: 0.28em;
+  }
   .boka-btn span { display: none; }
+  .boka-btn { padding: 10px; }
+  .boka-btn svg { width: 18px; height: 18px; }
+
+  /* ----- hero: hide booking widget, show a single clean CTA in the caption ----- */
+  .booking { display: none; }
+  .hero { min-height: 100svh; height: 100svh; }
+  .hero-caption {
+    padding-bottom: 96px;
+    padding-top: 40px;
+  }
+  .hero-caption h1 { font-size: clamp(2.4rem, 11vw, 3.4rem); }
+  .hero-caption .lead { font-size: 1rem; margin-top: 22px; }
+  .hero-mobile-cta {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 16px 36px;
+    background: rgba(20, 35, 58, 0.78);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #f4ecd8;
+    font-family: var(--font-ui);
+    font-size: 0.74rem;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    font-weight: 400;
+    border: 1px solid rgba(201, 160, 90, 0.55);
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+  .hero-mobile-cta:hover,
+  .hero-mobile-cta:active {
+    background: var(--gold-deep);
+    border-color: var(--gold-light);
+  }
+
+  /* ----- menu tabs wrap cleaner ----- */
   .menu-tabs { flex-wrap: wrap; }
-  .menu-tabs button { padding: 14px 16px; font-size: 0.66rem; }
-  .booking { grid-template-columns: 1fr; bottom: 24px; }
-  .booking-field { border-right: none; }
-  .hero-caption { padding-bottom: 320px; }
+  .menu-tabs button { padding: 14px 16px; font-size: 0.66rem; letter-spacing: 0.24em; }
+
   .footer-top { grid-template-columns: 1fr; }
 }
 
@@ -1210,6 +1256,10 @@ body.menu-open .menu-btn { color: #f4ecd8; }
       <span lang="sv">Bar och konditori under däck på Stockholms vackraste fartyg. Kom som ni är, stanna så länge ni vill.</span>
       <span lang="en">Bar and patisserie below the decks of Stockholm's most beautiful vessel. Come as you are, stay as long as you like.</span>
     </p>
+    <a href="#kontakt" class="hero-mobile-cta">
+      <span lang="sv">Reservera bord</span>
+      <span lang="en">Reserve a table</span>
+    </a>
   </div>
 
   <!-- Booking widget -->
