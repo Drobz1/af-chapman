@@ -1098,14 +1098,18 @@ body.menu-open .menu-btn { color: #f4ecd8; }
   .header-top { padding: 0 12px; gap: 12px; }
   .menu-btn > span:not(.lines) { display: none; }
   .menu-btn {
-    padding: 11px 13px;
+    padding: 0;
+    width: 42px;
+    height: 42px;
+    justify-content: center;
+    gap: 0;
     background: rgba(20, 35, 58, 0.6);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(244, 236, 216, 0.25);
     border-radius: 999px;
   }
-  .menu-btn .lines { width: 22px; gap: 5px; }
+  .menu-btn .lines { width: 18px; gap: 5px; }
   .menu-btn .lines span {
     height: 2px;
     background: #f4ecd8;
@@ -1133,7 +1137,13 @@ body.menu-open .menu-btn { color: #f4ecd8; }
     letter-spacing: 0.28em;
   }
   .boka-btn span { display: none; }
-  .boka-btn { padding: 10px; }
+  .boka-btn {
+    padding: 0;
+    width: 42px;
+    height: 42px;
+    justify-content: center;
+    gap: 0;
+  }
   .boka-btn svg { width: 18px; height: 18px; }
 
   /* ----- hero: hide booking widget, show a single clean CTA in the caption ----- */
